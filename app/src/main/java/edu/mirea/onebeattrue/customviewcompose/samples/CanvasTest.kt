@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -30,7 +30,7 @@ fun CanvasTest() {
                 lineTo(center.x - 90.dp.toPx(), center.y)
             },
             color = Color.White,
-            style = Stroke(1.dp.toPx())
+            style = Fill
         )
     }
 }
