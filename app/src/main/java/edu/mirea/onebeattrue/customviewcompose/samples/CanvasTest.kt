@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.TileMode
+import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
@@ -49,13 +50,25 @@ fun CanvasTest() {
                 points.forEachIndexed { index, offset ->
                     if (index == 0) {
                         moveTo(offset.x, offset.y)
+                        drawCircle(
+                            center = offset,
+                            radius = 10.dp.toPx(),
+                            brush = Brush.linearGradient(listOf(Color.Red, Color.Yellow)),
+                            style = Fill
+                        )
                     } else {
                         lineTo(offset.x, offset.y)
+                        drawCircle(
+                            center = offset,
+                            radius = 10.dp.toPx(),
+                            brush = Brush.linearGradient(listOf(Color.Red, Color.Yellow)),
+                            style = Fill
+                        )
                     }
                 }
             },
             brush = Brush.linearGradient(listOf(Color.Red, Color.Yellow)),
-            style = Stroke(25.dp.toPx()),
+            style = Stroke(20.dp.toPx()),
         )
     }
 }
